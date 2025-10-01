@@ -1,20 +1,35 @@
-raw_input = input('Wprowadź działania (pamiętaj o spacjach):\n')
+wyr = input().split()
+stos = ['#']
 
-inpt = raw_input.split(' ')
-stos = []
+for i in wyr:
+    if '0' <= i <= '9':
+        print(i, end=" ")
 
+    elif i in ['+', '-']:
+        while stos[-1] != '#':
+            print(stos[-1], end=" ")
+            stos.pop()
+        stos.append(i)
+    elif i in ['*', '/']:
+        while stos[-1] not in ['#', '+', '-', '(']:
+            print(stos[-1], end=" ")
+            stos.pop()
+        stos.append(i)
 
-def zamien_infiks_na_onp(infiks):
-    print(infiks, end='\n\n')
-    for i in infiks:
-        if i in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
-            print(f'{i} to liczba')
+    elif i == '^':
+        if stos[-1] == '^':
+            print(stos[-1], end=" ")
+            stos.pop()
+        stos.append(i)
 
-        elif i not in ['(', ')']:
-            print(f'{i} to nawias')
+    elif i == '(':
+        stos.append(i)
 
-        else:
-            print(f'{i} to operator')
+    elif i == ')':
+        while stos[-1] != '(':
+            print(stos[-1], end=' ')
+            stos.pop()
 
-
-print(zamien_infiks_na_onp(inpt))
+while stos[-1] != '#':
+    print(stos[-1], end=" ")
+    stos.pop()
