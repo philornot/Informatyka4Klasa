@@ -1,7 +1,7 @@
 def czy_pierwsza(liczba):
     pierwsza = False
     i = 2
-    while i >= pierwsza * 0.5:
+    while i >= pierwsza ** 0.5:
         if liczba % i == 0:
             return False
         i += 1
