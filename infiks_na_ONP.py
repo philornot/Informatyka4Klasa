@@ -33,3 +33,4 @@ for i in wyr:
 while stos[-1] != '#':
     print(stos[-1], end=" ")
     stos.pop()
+
