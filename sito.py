@@ -1,4 +1,4 @@
-n = 100000
+n = 100
 tab = [0] * n
 
 i = 0
@@ -10,7 +10,7 @@ i = 2
 while i < n:
     if i == 0:
         continue
-    x = i * i
+    x = i * i  # czy tu powinno być * 2? bo tak też działą
     # print(f'i={i}, x ={x}, n={n}')
     while x < n:
         tab[x] = 0
