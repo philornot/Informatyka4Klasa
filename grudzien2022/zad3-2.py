@@ -13,18 +13,17 @@ def wczytaj_dane(przyklad=False):
 
 
 def sito(N):
-    tab = [0] * N
-    tab[0] = False
+    tab = [False] * N
 
-    for i in range(2, len(tab)):
+    for i in range(2, N):
         tab[i] = True
 
-    for i in range(2, len(tab)):
-        if tab[i] is True:
+    for i in range(2, N):
+        if tab[i]:
             j = i * i
-            while j <= N:
+            while j < N:
                 tab[j] = False
-                j = i + i
+                j = j + i
 
     return tab
 
