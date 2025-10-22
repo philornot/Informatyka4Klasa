@@ -35,13 +35,36 @@ def sito(n):
     return tab
 
 
+def na_ile_spodobow(n):
+    tab_sito = sito(n)
+    licznik = 0
+    i = 1
+    while i <= n / 2:
+        i += 1
+
+        if i not in tab_sito:
+            continue
+
+        j = n - i
+        if j in tab_sito:
+            licznik += 1
+
+    return licznik
+
+
 liczby = wczytaj_dane(przyklad=True)
-# print(liczby)
-tab = sito(len(liczby))
+liczby_slownik = {}
+maks = 0
+min = 99999999999
+min_liczba, maks_liczba = 0, 0
+for liczba in liczby:
+    if na_ile_spodobow(liczba) > maks:
+        maks = na_ile_spodobow(liczba)
+        maks_liczba = liczba
+    if na_ile_spodobow(liczba) < min:
+        min = na_ile_spodobow(liczba)
+        min_liczba = liczba
 
-licznik = 0
-for x in range(len(tab)):
-    if tab[x - 1] != 0:
-        licznik += 1
 
-print(licznik)
+print(maks_liczba, maks)
+print(min_liczba, min)
