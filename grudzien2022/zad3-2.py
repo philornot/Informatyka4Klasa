@@ -29,4 +29,12 @@ def sito(N):
 
 
 liczby = wczytaj_dane(przyklad=True)
-print(liczby)
+# print(liczby)
+tab = sito(len(liczby))
+
+licznik = 0
+for x in range(len(tab)):
+    if tab[x - 1]:
+        licznik += 1
+
+print(licznik)
