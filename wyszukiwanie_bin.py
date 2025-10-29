@@ -18,6 +18,8 @@ def szukaj_parzystej(tab):
 
 tab = [1, 23, 43, 31, 21, 47, 18, 22, 12, 6, 24]
 tab2 = [1, 231, 14, 12, 44, 24, 12]
+tab3 = [1, 231, 15, 13, 45, 23, 12]
 print(tab)
 print(szukaj_parzystej(tab))
 print(szukaj_parzystej(tab2))
+print(szukaj_parzystej(tab3))
