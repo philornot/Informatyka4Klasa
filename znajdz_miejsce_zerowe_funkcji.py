@@ -1,6 +1,11 @@
-def f(x):
-    return x ** 3 - 3 * x ** 2 + 2 * x - 6
+# def f(x):
+#     return x ** 3 - 3 * x ** 2 + 2 * x - 6
 
+# def f(x):
+#     return x ** 11 - 3 * x ** 7 + 2 * x**6 - 6*x**3 + 123
+
+def f(x):
+    return x*2 - 3*x + 3
 
 def znajdz_mz(a, b, dokladnosc=0.0001):
     if b < a:
@@ -17,4 +22,4 @@ def znajdz_mz(a, b, dokladnosc=0.0001):
     return (a + b) / 2
 
 
-print(znajdz_mz(10000, -10000))
+print(znajdz_mz(-100000, 100000))
