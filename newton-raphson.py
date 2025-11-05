@@ -3,7 +3,7 @@ def oszacuj_pierwiastek(pierwiastek_do_kwadratu, dokladnosc=0.00001):
     a = 1
     b = pole_kwadratu
     licznik = 0
-    while abs(a - b) >= dokladnosc:
+    while abs(a - b) > dokladnosc:
         a = (a + b) / 2
         b = pole_kwadratu / a
         licznik += 1
