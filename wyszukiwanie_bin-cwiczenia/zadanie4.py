@@ -24,14 +24,23 @@ def znajdz_maks_d(k, L=[10, 15, 20]):
 
     while lewy <= prawy:
         srodek = (lewy + prawy) // 2
-        print(f'Zakres: [{lewy}...{prawy}], srodek = {srodek}')
-        if potnij_na_kawalki(srodek, L) >= k:
+        liczba_kawalkow = potnij_na_kawalki(srodek, L)
+        print(f'Zakres: [{lewy}...{prawy}], liczba kawałków dla d={srodek} --> {liczba_kawalkow}',end=' ')
+        if liczba_kawalkow >= k:
+            print(f'({liczba_kawalkow} >= {k})')
             d_maks = srodek
             lewy = srodek + 1  # przesuń zakres w prawo
         else:
+            print(f'({liczba_kawalkow} < {k})')
             prawy = srodek - 1  # przesuń zakres w lewo
 
     return d_maks
 
 
-print(znajdz_maks_d(7))
+print("naciśnij enter żeby zakończyć program")
+while True:
+    k = input(f"k=")
+    if k == "":
+        break
+    else:
+        print(f'd_maks={znajdz_maks_d(int(k))}', end="\n\n")
