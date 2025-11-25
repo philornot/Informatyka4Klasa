@@ -14,7 +14,7 @@ def funkcja(tab, liczba):
 
 
 # BEZ FUNKCJI:
-tab = [1, 2, 4, 7, 8, 9, 11]  # najpierw jakieś dane wejściowe
+tab = [1, 2, 4, 7, 8, 9, 11]  # najpierw jakieś napisy wejściowe
 liczba = 3  # bo w funkcji mamy je w argumentach
 
 # a kod jest dokładnie ten sam, z tym że zamieniamy return na print
